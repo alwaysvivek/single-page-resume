@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --color-background: #080808;
+  --color-primary: #FFFFFF;
+  --color-secondary: #A9A9B8;
+  --color-accent: #007AFF;
+  --color-haki: #4B0082;
+  --color-chakra: #00BFFF;
+  --color-kyubi: #FF8C00;
+  --color-strawhat: #F4D03F;
+  
+  @keyframes chakra-flow {
+    0% { border-color: var(--color-chakra); box-shadow: 0 0 15px rgba(0, 191, 255, 0.2); }
+    50% { border-color: var(--color-kyubi); box-shadow: 0 0 25px rgba(255, 140, 0, 0.3); }
+    100% { border-color: var(--color-chakra); box-shadow: 0 0 15px rgba(0, 191, 255, 0.2); }
+  }
+  
+  @keyframes wave {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-25%); }
+    100% { transform: translateX(0); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-primary font-sans antialiased selection:bg-accent selection:text-white;
+  }
+  
+  h2 {
+    @apply font-display uppercase tracking-[0.2em] text-sm text-secondary/60;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .haki-glow {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .systems-glow:hover {
+    box-shadow: 0 0 50px 10px rgba(0, 122, 255, 0.15);
+    border-color: rgba(0, 122, 255, 0.3) !important;
+    transform: translateY(-4px);
+  }
+
+  .ai-glow:hover {
+    box-shadow: 0 0 50px 10px rgba(255, 140, 0, 0.2);
+    border-color: rgba(255, 140, 0, 0.4) !important;
+    transform: translateY(-4px);
+  }
+
+  .fullstack-glow:hover {
+    box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-4px);
+  }
+  
+  .chakra-border {
+    border: 2px solid transparent;
+    animation: chakra-flow 3s ease-in-out infinite;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+  }
+
+  .grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='noiseFilter'%3%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3%3C/filter%3%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3%3C/svg%3");
+  }
+}
