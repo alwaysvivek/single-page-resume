@@ -9,15 +9,23 @@
 
 ---
 
-## ✨ Experience & Aesthetics
+## 🏗️ Technical Architecture
 
-This space is designed to be more than just a list of links. It is a high-fidelity digital reflection of my work, focused on a premium, tactile experience.
+This portfolio is a performance-optimized, AI-native environment built on **React 19** and **Vite 6**. It leverages a custom-built interaction engine to deliver a fluid, lag-free experience across all devices.
 
-- **Tacile Depth**: A custom grain texture overlay is injected throughout the interface, giving the dark-mode aesthetic a physical, high-end feel.
-- **Reactive Navigation**: The header navigation is scroll-aware—transforming its shape, blur, and borders dynamically as you explore the content.
-- **Fluid Motion**: Every section uses physics-based entrance animations, sliding and fading into view with a natural sense of momentum.
-- **The Command Center**: A ⌘K search interface serves as the heart of the navigation, allowing for instant project discovery and seamless internal routing.
-- **Signal Skills**: A specialized skill matrix that visualizes expertise in AI Engineering, Systems Architecture, and Modern Full-Stack Development.
+- **Interaction Engine**: Powered by **Framer Motion**, utilizing a spring-based physics model for all transitions and "While-In-View" entrance physics.
+- **Dynamic Header Overlay**: A reactive navigation system that uses real-time scroll telemetry to dynamically adjust background blur, padding, and border opacity.
+- **⌘K Command Palette**: A central, indexed search architecture built for millisecond response times, enabling deep-linking into projects and experience nodes.
+- **Grain Overlay System**: A specialized SVG-based noise injection layer that adds tactile depth and a premium "physical" feel to the high-contrast dark mode.
+- **Signal Skills Matrix**: A structured metadata system that categorizes technical expertise into distinct signal domains (AI, Systems, Full-Stack), complete with an internal bridging logic to the industrial timeline.
+
+---
+
+## ✨ Aesthetics & Professionalism
+
+- **Tactile Depth**: The custom grain texture overlay makes the digital surface feel like a premium material.
+- **Minimalist Flow**: Every pixel is intentional, designed to highlight project impact and technical signal without visual noise.
+- **Production Hardened**: Optimized for static delivery with zero-latency routing and a fully verified type-safe codebase.
 
 ---
 
