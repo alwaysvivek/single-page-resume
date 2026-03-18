@@ -11,15 +11,15 @@ export default function Skills({ onDomainClick }: SkillsProps) {
   const [activeDomain, setActiveDomain] = useState<string | null>(null);
 
   return (
-    <section id="skills" className="py-24 border-t border-white/5">
+    <section id="skills" className="py-16 md:py-24 border-t border-white/5">
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="flex items-center justify-between mb-24"
+        className="flex items-center justify-between mb-16 md:mb-24"
       >
-        <h2 className="text-3xl font-bold tracking-tight font-display text-primary">Signal</h2>
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight font-display text-primary">Signal</h2>
         <span className="text-[10px] font-mono text-secondary/40 uppercase tracking-[0.4em]">02 / Skills</span>
       </motion.div>
 
@@ -38,7 +38,7 @@ export default function Skills({ onDomainClick }: SkillsProps) {
               className="w-full flex items-center justify-between py-6 text-left border-b border-white/5 group-hover:border-accent/30 transition-colors"
             >
               <div className="flex flex-col">
-                <span className={`text-xl font-mono transition-colors ${
+                <span className={`text-lg md:text-xl font-mono transition-colors ${
                   activeDomain === domain.name ? 'text-accent' : 'text-secondary/30 group-hover:text-secondary/60'
                 }`}>
                   // {domain.name}
@@ -63,7 +63,7 @@ export default function Skills({ onDomainClick }: SkillsProps) {
                   transition={{ duration: 0.4, ease: "circOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="py-12 flex flex-col md:flex-row gap-12">
+                  <div className="py-8 md:py-12 flex flex-col md:flex-row gap-8 md:gap-12">
                     <div className="flex-1 flex flex-col gap-10">
                       {domain.subcategories.map((sub, sIndex) => (
                         <div key={sub.name} className="flex flex-col gap-4">
@@ -79,14 +79,14 @@ export default function Skills({ onDomainClick }: SkillsProps) {
                               </button>
                             )}
                           </div>
-                          <div className="flex flex-wrap gap-x-6 gap-y-3">
+                          <div className="flex flex-wrap gap-x-4 md:gap-x-6 gap-y-2 md:gap-y-3">
                             {sub.skills.map((skill, skillIndex) => (
                               <motion.span 
                                 key={skill}
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: (sIndex * 0.1) + (skillIndex * 0.05) }}
-                                className="text-xl md:text-2xl font-display font-medium text-white"
+                                className="text-lg md:text-2xl font-display font-medium text-white"
                               >
                                 {skill}
                               </motion.span>
@@ -114,7 +114,7 @@ export default function Skills({ onDomainClick }: SkillsProps) {
       </div>
 
       {/* Credentials Section: Education & Certs */}
-      <div className="mt-40">
+      <div className="mt-24 md:mt-40">
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}

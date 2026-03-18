@@ -30,8 +30,8 @@ export default function Projects({ filter, onClearFilter, onSelectProject }: Pro
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="flex items-center justify-between mb-16"
       >
-        <div className="flex items-center gap-6">
-          <h2 className="text-3xl font-bold tracking-tight font-display text-primary">Proof of Work</h2>
+        <div className="flex items-center gap-4 lg:gap-6">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight font-display text-primary">Proof of Work</h2>
           {filter && (
             <motion.button
               initial={{ opacity: 0, x: -10 }}
@@ -58,7 +58,7 @@ export default function Projects({ filter, onClearFilter, onSelectProject }: Pro
               viewport={{ once: true }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`group block p-10 rounded-[2rem] glass hover:bg-white/[0.08] transition-all duration-700 relative overflow-hidden haki-glow border-transparent ${
+              className={`group block p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] glass hover:bg-white/[0.08] transition-all duration-700 relative overflow-hidden haki-glow border-transparent ${
                 project.domain === 'Systems Engineering' ? 'systems-glow' : 
                 project.domain === 'Artificial Intelligence' ? 'ai-glow' : 'fullstack-glow'
               }`}
@@ -67,7 +67,7 @@ export default function Projects({ filter, onClearFilter, onSelectProject }: Pro
                 <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
                   <div className="max-w-2xl">
                     <div className="flex items-center gap-4 mb-4">
-                      <h3 className="text-3xl font-bold font-display group-hover:text-primary transition-colors">
+                      <h3 className="text-2xl md:text-3xl font-bold font-display group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
                       <div className="flex gap-2">
@@ -90,7 +90,7 @@ export default function Projects({ filter, onClearFilter, onSelectProject }: Pro
                       </div>
                     </div>
                     
-                    <p className="text-lg text-secondary/80 leading-[1.8] tracking-wide mb-8 group-hover:text-primary/90 transition-colors font-light">
+                    <p className="text-base md:text-lg text-secondary/80 leading-[1.6] md:leading-[1.8] tracking-wide mb-8 group-hover:text-primary/90 transition-colors font-light">
                       {project.description}
                     </p>
                     
@@ -108,7 +108,7 @@ export default function Projects({ filter, onClearFilter, onSelectProject }: Pro
                       onClick={() => onSelectProject(project)}
                       whileHover={{ scale: 1.02, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-white/5 border border-white/10 text-sm font-bold text-primary hover:border-accent/40 transition-all group/btn shadow-xl"
+                      className="flex items-center justify-center gap-3 px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 text-xs md:text-sm font-bold text-primary hover:border-accent/40 transition-all group/btn shadow-xl"
                     >
                       <Info className="w-4 h-4 text-accent" />
                       View Details
@@ -121,13 +121,13 @@ export default function Projects({ filter, onClearFilter, onSelectProject }: Pro
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
-                        className={`flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold transition-all shadow-lg ${
+                        className={`flex-1 flex items-center justify-center gap-2 px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl font-bold transition-all shadow-lg text-xs md:text-sm ${
                           project.isGithubOnly 
                             ? 'bg-white/5 border border-white/10 text-secondary hover:text-primary hover:border-white/20' 
                             : 'bg-primary text-background hover:bg-accent hover:text-white shadow-primary/10'
                         }`}
                       >
-                        {project.isGithubOnly ? 'GitHub Repo' : (project.linkLabel || 'Live')}
+                        {project.isGithubOnly ? 'GitHub' : (project.linkLabel || 'Live')}
                         {project.isGithubOnly ? <Github className="w-4 h-4" /> : <ArrowUpRight className="w-4 h-4" />}
                       </motion.a>
 
@@ -138,9 +138,9 @@ export default function Projects({ filter, onClearFilter, onSelectProject }: Pro
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05, y: -2 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex items-center justify-center px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-secondary hover:text-primary hover:border-white/20 transition-all shadow-xl"
+                          className="flex items-center justify-center px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 text-secondary hover:text-primary hover:border-white/20 transition-all shadow-xl"
                         >
-                          <Github className="w-5 h-5" />
+                          <Github className="w-4 h-4 md:w-5 h-5" />
                         </motion.a>
                       )}
                     </div>

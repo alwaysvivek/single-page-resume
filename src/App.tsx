@@ -59,7 +59,7 @@ export default function App() {
         </motion.div>
 
         {/* Projects Layer */}
-        <div className="sticky bottom-0 min-h-screen w-full bg-background/90 backdrop-blur-md border-t border-white/10 shadow-[0_-50px_100px_rgba(0,0,0,0.8)] z-10 px-6 flex justify-center pb-24">
+        <div className="sticky bottom-0 min-h-[80vh] md:min-h-screen w-full bg-background/90 backdrop-blur-md border-t border-white/10 shadow-[0_-50px_100px_rgba(0,0,0,0.8)] z-10 px-4 md:px-6 flex justify-center pb-16 md:pb-24">
           <div className="max-w-6xl w-full">
             <Projects 
               filter={projectFilter} 
@@ -70,7 +70,7 @@ export default function App() {
         </div>
 
         {/* Skills Layer */}
-        <div className="sticky bottom-0 min-h-screen w-full bg-[#050505e6] backdrop-blur-md border-t border-white/10 shadow-[0_-50px_100px_rgba(0,0,0,0.8)] z-20 px-6 flex justify-center pb-24">
+        <div className="sticky bottom-0 min-h-[80vh] md:min-h-screen w-full bg-[#050505e6] backdrop-blur-md border-t border-white/10 shadow-[0_-50px_100px_rgba(0,0,0,0.8)] z-20 px-4 md:px-6 flex justify-center pb-16 md:pb-24">
           <div className="max-w-6xl w-full">
             <Skills onDomainClick={(domain) => {
               setProjectFilter(domain);
@@ -80,14 +80,14 @@ export default function App() {
         </div>
 
         {/* Experience Layer */}
-        <div className="sticky bottom-0 min-h-screen w-full bg-background/95 backdrop-blur-md border-t border-white/10 shadow-[0_-50px_100px_rgba(0,0,0,0.8)] z-30 px-6 flex justify-center pb-24">
+        <div className="sticky bottom-0 min-h-[80vh] md:min-h-screen w-full bg-background/95 backdrop-blur-md border-t border-white/10 shadow-[0_-50px_100px_rgba(0,0,0,0.8)] z-30 px-4 md:px-6 flex justify-center pb-16 md:pb-24">
           <div className="max-w-6xl w-full">
             <Experience />
           </div>
         </div>
 
         {/* Contact Layer */}
-        <div className="relative min-h-screen w-full bg-black backdrop-blur-md border-t border-white/10 shadow-[0_-50px_100px_rgba(0,0,0,0.8)] z-40 flex items-center justify-center px-6 pb-24">
+        <div className="relative min-h-[80vh] md:min-h-screen w-full bg-black backdrop-blur-md border-t border-white/10 shadow-[0_-50px_100px_rgba(0,0,0,0.8)] z-40 flex items-center justify-center px-4 md:px-6 pb-16 md:pb-24">
           <div className="max-w-6xl w-full">
             <Contact />
           </div>

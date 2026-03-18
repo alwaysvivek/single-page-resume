@@ -110,7 +110,7 @@ export default function CommandPalette({ isOpen, onClose, onSelectProject }: Com
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh] px-4">
+        <div className="fixed inset-0 z-50 flex items-start justify-center pt-[5vh] md:pt-[15vh] px-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -153,15 +153,15 @@ export default function CommandPalette({ isOpen, onClose, onSelectProject }: Com
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="w-full max-w-2xl glass rounded-2xl overflow-hidden shadow-2xl relative z-10 flex flex-col"
+            className="w-full max-w-2xl glass rounded-xl md:rounded-2xl overflow-hidden shadow-2xl relative z-10 flex flex-col"
           >
             <div className="flex items-center px-4 py-4 border-b border-white/10">
               <Search className="w-5 h-5 text-secondary mr-3" />
               <input
                 ref={inputRef}
                 type="text"
-                placeholder="Search projects, skills, experience..."
-                className="flex-1 bg-transparent border-none outline-none text-primary placeholder:text-secondary text-lg"
+                placeholder="Search..."
+                className="flex-1 bg-transparent border-none outline-none text-primary placeholder:text-secondary text-base md:text-lg"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />

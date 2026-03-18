@@ -7,7 +7,7 @@ export default function Hero() {
   const ringOpacity = useTransform(scrollY, [0, 500], [0.5, 0]);
 
   return (
-    <section className="pt-40 pb-24 relative">
+    <section className="pt-24 md:pt-40 pb-16 md:pb-24 relative">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -38,11 +38,11 @@ export default function Hero() {
           />
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 font-display leading-[0.9]">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-6 font-display leading-[1.1] md:leading-[0.9]">
           Hi, I'm <span className="text-primary">Vivek</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-secondary max-w-2xl leading-relaxed mb-12 font-light">
+        <p className="text-lg md:text-2xl text-secondary max-w-2xl leading-relaxed mb-12 font-light px-4">
           Building <span className="text-primary font-medium">agentic, AI-native products</span> while mentoring a <span className="text-primary font-medium">global community</span> of learners and engineers.
         </p>
 
@@ -59,7 +59,7 @@ export default function Hero() {
           className="flex items-center gap-4 px-6 py-3 rounded-full glass text-[10px] md:text-xs font-mono text-secondary uppercase tracking-[0.3em]"
         >
           <span className="w-2 h-2 rounded-full bg-strawhat shadow-[0_0_10px_#F4D03F]" />
-          <span className="drop-shadow-[0_0_10px_rgba(255,140,0,0.15)]">
+          <span className="drop-shadow-[0_0_10px_rgba(255,140,0,0.15)] leading-tight">
             Currently <span className="text-primary font-bold">IDLE</span> — Monitoring for high-impact challenges.
           </span>
         </motion.div>

@@ -30,25 +30,26 @@ export default function Header({ onOpenPalette }: HeaderProps) {
         <div className="flex items-center gap-6">
           <button 
             onClick={onOpenPalette}
-            className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-[10px] font-mono text-secondary hover:text-primary hover:border-accent/50 transition-all uppercase tracking-widest group"
+            className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-[10px] font-mono text-secondary hover:text-primary hover:border-accent/50 transition-all uppercase tracking-widest group"
           >
             <Search className="w-3.5 h-3.5 group-hover:text-accent transition-colors" />
-            <span>Search</span>
+            <span className="hidden xs:inline">Search</span>
             <kbd className="hidden sm:inline-block px-1.5 py-0.5 rounded bg-white/5 border border-white/10 ml-2 opacity-50">⌘K</kbd>
           </button>
         </div>
         
-        <nav className="flex items-center gap-10">
+        <nav className="flex items-center gap-4 sm:gap-6 md:gap-10">
           {SOCIAL_LINKS.map((link) => (
             <motion.a
               key={link.label}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] font-bold text-secondary hover:text-accent transition-all tracking-[0.25em] uppercase relative group"
+              className="text-[9px] md:text-[10px] font-bold text-secondary hover:text-accent transition-all tracking-[0.2em] md:tracking-[0.25em] uppercase relative group"
               whileHover={{ y: -2 }}
             >
-              {link.label}
+              <span className="hidden xs:inline">{link.label}</span>
+              <span className="xs:hidden">{link.label.substring(0, 2)}</span>
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all group-hover:w-full" />
             </motion.a>
           ))}
